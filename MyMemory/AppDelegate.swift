@@ -11,10 +11,14 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var memolist = Array<MemoData>() // 메모 데이터를 저장할 배열 변수
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // LaunchScreen을 1.5초 동안 지연시킴
+        Thread.sleep(forTimeInterval: 1.5)
         return true
     }
 
@@ -76,6 +80,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }
 

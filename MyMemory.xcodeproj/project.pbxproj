@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		57EE7FF625B541F300907A96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE7FF525B541F300907A96 /* AppDelegate.swift */; };
 		57EE7FF825B541F300907A96 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE7FF725B541F300907A96 /* SceneDelegate.swift */; };
-		57EE7FFA25B541F300907A96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE7FF925B541F300907A96 /* ViewController.swift */; };
 		57EE7FFD25B541F300907A96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57EE7FFB25B541F300907A96 /* Main.storyboard */; };
 		57EE800025B541F300907A96 /* MyMemory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57EE7FFE25B541F300907A96 /* MyMemory.xcdatamodeld */; };
 		57EE800225B541F400907A96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57EE800125B541F400907A96 /* Assets.xcassets */; };
 		57EE800525B541F400907A96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57EE800325B541F400907A96 /* LaunchScreen.storyboard */; };
+		57EE801025B5539100907A96 /* MemoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE800F25B5539100907A96 /* MemoListVC.swift */; };
+		57EE801325B553C100907A96 /* MemoReadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE801225B553C100907A96 /* MemoReadVC.swift */; };
+		57EE801625B553E300907A96 /* MemoFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE801525B553E300907A96 /* MemoFormVC.swift */; };
+		57EE801B25B554AA00907A96 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE801A25B554AA00907A96 /* MemoCell.swift */; };
+		57EE801E25B554F000907A96 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE801D25B554F000907A96 /* MemoData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		57EE7FF225B541F300907A96 /* MyMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57EE7FF525B541F300907A96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57EE7FF725B541F300907A96 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		57EE7FF925B541F300907A96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		57EE7FFC25B541F300907A96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57EE7FFF25B541F300907A96 /* MyMemory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyMemory.xcdatamodel; sourceTree = "<group>"; };
 		57EE800125B541F400907A96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57EE800425B541F400907A96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57EE800625B541F400907A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57EE800F25B5539100907A96 /* MemoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListVC.swift; sourceTree = "<group>"; };
+		57EE801225B553C100907A96 /* MemoReadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadVC.swift; sourceTree = "<group>"; };
+		57EE801525B553E300907A96 /* MemoFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFormVC.swift; sourceTree = "<group>"; };
+		57EE801A25B554AA00907A96 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
+		57EE801D25B554F000907A96 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +68,12 @@
 			children = (
 				57EE7FF525B541F300907A96 /* AppDelegate.swift */,
 				57EE7FF725B541F300907A96 /* SceneDelegate.swift */,
-				57EE7FF925B541F300907A96 /* ViewController.swift */,
 				57EE7FFB25B541F300907A96 /* Main.storyboard */,
+				57EE801D25B554F000907A96 /* MemoData.swift */,
+				57EE801A25B554AA00907A96 /* MemoCell.swift */,
+				57EE800F25B5539100907A96 /* MemoListVC.swift */,
+				57EE801225B553C100907A96 /* MemoReadVC.swift */,
+				57EE801525B553E300907A96 /* MemoFormVC.swift */,
 				57EE800125B541F400907A96 /* Assets.xcassets */,
 				57EE800325B541F400907A96 /* LaunchScreen.storyboard */,
 				57EE800625B541F400907A96 /* Info.plist */,
@@ -140,10 +152,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57EE801B25B554AA00907A96 /* MemoCell.swift in Sources */,
+				57EE801E25B554F000907A96 /* MemoData.swift in Sources */,
+				57EE801025B5539100907A96 /* MemoListVC.swift in Sources */,
 				57EE800025B541F300907A96 /* MyMemory.xcdatamodeld in Sources */,
-				57EE7FFA25B541F300907A96 /* ViewController.swift in Sources */,
+				57EE801625B553E300907A96 /* MemoFormVC.swift in Sources */,
 				57EE7FF625B541F300907A96 /* AppDelegate.swift in Sources */,
 				57EE7FF825B541F300907A96 /* SceneDelegate.swift in Sources */,
+				57EE801325B553C100907A96 /* MemoReadVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +307,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AK73969HFN;
 				INFOPLIST_FILE = MyMemory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,7 +317,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sobamemil.MyMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -309,7 +327,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AK73969HFN;
 				INFOPLIST_FILE = MyMemory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,7 +337,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sobamemil.MyMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
