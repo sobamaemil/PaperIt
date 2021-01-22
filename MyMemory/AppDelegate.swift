@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // LaunchScreen을 1.5초 동안 지연시킴
-        Thread.sleep(forTimeInterval: 1.5)
+//        // LaunchScreen을 1.5초 동안 지연시킴
+//        Thread.sleep(forTimeInterval: 1.5)
         return true
     }
 
