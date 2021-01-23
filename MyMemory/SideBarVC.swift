@@ -86,6 +86,7 @@ class SideBarVC: UITableViewController {
         self.profileImage.layer.borderWidth = 0 // 테두리 두께 0으로
         self.profileImage.layer.masksToBounds = true // 마스크 효과
         headerView.addSubview(self.profileImage) // 헤더 뷰에 추가
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
