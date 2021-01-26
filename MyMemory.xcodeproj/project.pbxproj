@@ -10,6 +10,8 @@
 		5717207325BEBDB80074DE72 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717207225BEBDB80074DE72 /* UserInfoManager.swift */; };
 		57798EC625BFFC25004B7D91 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57798EC525BFFC25004B7D91 /* Tutorial.storyboard */; };
 		57798EC925BFFF6C004B7D91 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57798EC825BFFF6C004B7D91 /* Utils.swift */; };
+		57798ECC25C00525004B7D91 /* TutorialContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57798ECB25C00525004B7D91 /* TutorialContentsVC.swift */; };
+		57798ED425C0085A004B7D91 /* TutorialMasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57798ED325C0085A004B7D91 /* TutorialMasterVC.swift */; };
 		57CED17825BA569600719DAA /* CSLogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CED17725BA569600719DAA /* CSLogButton.swift */; };
 		57CED17F25BA581900719DAA /* memo-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57CED17C25BA581900719DAA /* memo-background@2x.png */; };
 		57CED18025BA581900719DAA /* warning-icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57CED17D25BA581900719DAA /* warning-icon-60@2x.png */; };
@@ -43,6 +45,8 @@
 		5717207225BEBDB80074DE72 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 		57798EC525BFFC25004B7D91 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		57798EC825BFFF6C004B7D91 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		57798ECB25C00525004B7D91 /* TutorialContentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialContentsVC.swift; sourceTree = "<group>"; };
+		57798ED325C0085A004B7D91 /* TutorialMasterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialMasterVC.swift; sourceTree = "<group>"; };
 		57CED17725BA569600719DAA /* CSLogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLogButton.swift; sourceTree = "<group>"; };
 		57CED17C25BA581900719DAA /* memo-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memo-background@2x.png"; sourceTree = "<group>"; };
 		57CED17D25BA581900719DAA /* warning-icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "warning-icon-60@2x.png"; sourceTree = "<group>"; };
@@ -87,6 +91,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57798ED125C00690004B7D91 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				57798EC525BFFC25004B7D91 /* Tutorial.storyboard */,
+				57798ED325C0085A004B7D91 /* TutorialMasterVC.swift */,
+				57798ECB25C00525004B7D91 /* TutorialContentsVC.swift */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
 		57CED17A25BA580D00719DAA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,12 +140,12 @@
 		57EE7FF425B541F300907A96 /* MyMemory */ = {
 			isa = PBXGroup;
 			children = (
+				57798ED125C00690004B7D91 /* Tutorial */,
 				57EE7FF525B541F300907A96 /* AppDelegate.swift */,
 				57EE7FF725B541F300907A96 /* SceneDelegate.swift */,
 				57EE7FFB25B541F300907A96 /* Main.storyboard */,
 				57CED20C25BAB60300719DAA /* SideBarVC.swift */,
 				57CED20F25BABEB900719DAA /* ProfileVC.swift */,
-				57798EC525BFFC25004B7D91 /* Tutorial.storyboard */,
 				5717207225BEBDB80074DE72 /* UserInfoManager.swift */,
 				57CED17725BA569600719DAA /* CSLogButton.swift */,
 				57EE801D25B554F000907A96 /* MemoData.swift */,
@@ -245,9 +259,11 @@
 				57EE800025B541F300907A96 /* MyMemory.xcdatamodeld in Sources */,
 				57EE801625B553E300907A96 /* MemoFormVC.swift in Sources */,
 				57EE7FF625B541F300907A96 /* AppDelegate.swift in Sources */,
+				57798ED425C0085A004B7D91 /* TutorialMasterVC.swift in Sources */,
 				57CED1EE25BAB24600719DAA /* SWRevealViewController.m in Sources */,
 				57EE7FF825B541F300907A96 /* SceneDelegate.swift in Sources */,
 				5717207325BEBDB80074DE72 /* UserInfoManager.swift in Sources */,
+				57798ECC25C00525004B7D91 /* TutorialContentsVC.swift in Sources */,
 				57EE801325B553C100907A96 /* MemoReadVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tutorial MasterVC-->
         <scene sceneID="0XO-Ed-dvW">
             <objects>
-                <viewController storyboardIdentifier="MasterVC" id="4Sy-LY-cyz" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MasterVC" id="4Sy-LY-cyz" customClass="TutorialMasterVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VSs-fT-LPg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="301" y="1"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial ContentsVC-->
         <scene sceneID="O34-kI-ybm">
             <objects>
-                <viewController storyboardIdentifier="ContentsVC" id="PTC-sz-dAm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentsVC" id="PTC-sz-dAm" customClass="TutorialContentsVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CA9-95-UrR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,6 +78,10 @@
                             <constraint firstItem="77F-Am-IOu" firstAttribute="leading" secondItem="fO6-WZ-IH6" secondAttribute="leading" id="lzr-km-J3z"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bgImageView" destination="77F-Am-IOu" id="UR5-oV-GrK"/>
+                        <outlet property="titleLabel" destination="Fdf-iI-IcY" id="LuD-oO-XYH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOV-fg-IU9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
