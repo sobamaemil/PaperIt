@@ -28,7 +28,7 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
         }
     
         // "ContentsVC"라는 Storyboard ID를 가진 뷰 컨트롤러의 인스턴스를 생성하고 캐스팅
-        guard let cvc = self.storyboard?.instantiateViewController(withIdentifier: "ContentsVC") as? TutorialContentsVC else {
+        guard let cvc = self.instanceTutorialVC(name: "ContentsVC") as? TutorialContentsVC else {
             return nil
         }
         
