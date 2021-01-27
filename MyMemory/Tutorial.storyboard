@@ -18,19 +18,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SB7-Zi-feY">
-                                <rect key="frame" x="157" y="832" width="100" height="30"/>
+                                <rect key="frame" x="157" y="851" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8Mj-xb-YL5"/>
                                     <constraint firstAttribute="width" constant="100" id="P4a-ST-H24"/>
                                 </constraints>
                                 <state key="normal" title="시작하기"/>
+                                <connections>
+                                    <action selector="close:" destination="4Sy-LY-cyz" eventType="touchUpInside" id="VUb-cI-TlH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WSw-Rj-L5q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SB7-Zi-feY" firstAttribute="centerX" secondItem="VSs-fT-LPg" secondAttribute="centerX" id="Cve-Fr-pTH"/>
-                            <constraint firstItem="SB7-Zi-feY" firstAttribute="bottom" secondItem="WSw-Rj-L5q" secondAttribute="bottom" id="z7e-bu-2FQ"/>
+                            <constraint firstItem="SB7-Zi-feY" firstAttribute="bottom" secondItem="WSw-Rj-L5q" secondAttribute="bottom" constant="19" id="z7e-bu-2FQ"/>
                         </constraints>
                     </view>
                 </viewController>
