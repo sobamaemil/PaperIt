@@ -79,7 +79,7 @@ class MemoDAO {
     func delete(_ objectID: NSManagedObjectID) -> Bool {
         // 삭제할 객체를 찾아, 컨텍스트에서 삭제
         let object = self.context.object(with: objectID)
-        self.context.delete(obejct)
+        self.context.delete(object)
         
         do {
             // 삭제된 내용을 영구저장소에 반영
