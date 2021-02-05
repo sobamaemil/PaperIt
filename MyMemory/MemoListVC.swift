@@ -7,12 +7,17 @@
 
 import UIKit
 
-class MemoListVC: UITableViewController {
+class MemoListVC: UITableViewController, UISearchBarDelegate {
     lazy var dao = MemoDAO()
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
+        // 검색 바의 키보드에서 리턴 키가 항상 활성화되어 있도록 처리
+        searchBar.enablesReturnKeyAutomatically = false
+        
         // SWRevealViewController 라이브러리의 revealViewController 객체를 읽어옴
         if let revealVC = self.revealViewController() {
             // 바 버튼 아이템 객체를 정의
@@ -28,6 +33,22 @@ class MemoListVC: UITableViewController {
             self.view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let keyword = searchBar.text // 검색 바에 입력된 키워드를 가져옴
+        
+        // 키워드를 적용하여 데이터를 검색하고, 테이블 뷰를 갱신
+        self.appDelegate.memolist = self.dao.fetch(keyword: keyword)
+        self.tableView.reloadData()
+    }
+    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        let keyword = searchBar.text // 검색 바에 입력된 키워드를 가져옴
+//
+//        // 키워드를 적용하여 데이터를 검색하고, 테이블 뷰를 갱신
+//        self.appDelegate.memolist = self.dao.fetch(keyword: keyword)
+//        self.tableView.reloadData()
+//    }
     
     // MARK: - Table view data source
 
