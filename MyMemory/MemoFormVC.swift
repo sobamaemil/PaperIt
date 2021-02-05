@@ -12,6 +12,7 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBOutlet weak var preview: UIImageView! // iamgeview 객체
     
     var subject: String! // 메모 내용의 첫 줄을 추출하여 제목으로 사용할 것
+    lazy var dao = MemoDAO() // 코어 데이터
     
     // 저장 버튼을 클릭했을 때 호출되는 메소드
     @IBAction func save(_ sender: Any) {
@@ -39,9 +40,12 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         data.image = self.preview.image // 이미지
         data.regdate = Date() // 작성 시각
         
-        // 앱 델리게이트 객체를 읽어온 다음, memolist 배열에 MemoData 객체를 추가
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.memolist.append(data)
+//        // 앱 델리게이트 객체를 읽어온 다음, memolist 배열에 MemoData 객체를 추가
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.memolist.append(data)
+        
+        // 코어 데이터에 메모 데이터를 추가
+        self.dao.insert(data)
         
         // 작성 화면을 종료하고 이전 화면으로 복귀
         self.navigationController?.popViewController(animated: true)
