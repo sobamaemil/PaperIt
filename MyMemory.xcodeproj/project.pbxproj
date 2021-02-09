@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		36C5F6AC910E469C52FD0C1E /* Pods_MyMemory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6BABB4D615B9E90459AC24 /* Pods_MyMemory.framework */; };
 		5717207325BEBDB80074DE72 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717207225BEBDB80074DE72 /* UserInfoManager.swift */; };
+		5725A0F625D29D8F008683A9 /* JoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725A0F525D29D8F008683A9 /* JoinVC.swift */; };
 		5733849125CD129B00F7D654 /* MemoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5733849025CD129B00F7D654 /* MemoDAO.swift */; };
 		57798EC625BFFC25004B7D91 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57798EC525BFFC25004B7D91 /* Tutorial.storyboard */; };
 		57798EC925BFFF6C004B7D91 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57798EC825BFFF6C004B7D91 /* Utils.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		4420C7314C95D8A6067E4173 /* Pods-MyMemory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMemory.release.xcconfig"; path = "Target Support Files/Pods-MyMemory/Pods-MyMemory.release.xcconfig"; sourceTree = "<group>"; };
 		5717207225BEBDB80074DE72 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
+		5725A0F525D29D8F008683A9 /* JoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinVC.swift; sourceTree = "<group>"; };
 		5733849025CD129B00F7D654 /* MemoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDAO.swift; sourceTree = "<group>"; };
 		57798EC525BFFC25004B7D91 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		57798EC825BFFF6C004B7D91 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				5717207225BEBDB80074DE72 /* UserInfoManager.swift */,
 				57CED17725BA569600719DAA /* CSLogButton.swift */,
 				57EE801D25B554F000907A96 /* MemoData.swift */,
+				5725A0F525D29D8F008683A9 /* JoinVC.swift */,
 				5733849025CD129B00F7D654 /* MemoDAO.swift */,
 				57EE801A25B554AA00907A96 /* MemoCell.swift */,
 				57798EC825BFFF6C004B7D91 /* Utils.swift */,
@@ -189,7 +192,6 @@
 				A8D28DF8B3CAF47144033494 /* Pods-MyMemory.debug.xcconfig */,
 				4420C7314C95D8A6067E4173 /* Pods-MyMemory.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -335,6 +337,7 @@
 				5733849125CD129B00F7D654 /* MemoDAO.swift in Sources */,
 				57CED1EE25BAB24600719DAA /* SWRevealViewController.m in Sources */,
 				57EE7FF825B541F300907A96 /* SceneDelegate.swift in Sources */,
+				5725A0F625D29D8F008683A9 /* JoinVC.swift in Sources */,
 				5717207325BEBDB80074DE72 /* UserInfoManager.swift in Sources */,
 				57798ECC25C00525004B7D91 /* TutorialContentsVC.swift in Sources */,
 				57EE801325B553C100907A96 /* MemoReadVC.swift in Sources */,
