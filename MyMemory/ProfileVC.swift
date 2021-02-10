@@ -14,7 +14,7 @@ class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     
     override func viewDidLoad() {
         self.navigationItem.title = "프로필"
-        
+
         // 뒤로 가기 버튼 처리
         let backBtn = UIBarButtonItem(title: "닫기", style: .plain, target: self, action: #selector(close(_:)))
         self.navigationItem.leftBarButtonItem = backBtn
