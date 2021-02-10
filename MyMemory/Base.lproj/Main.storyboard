@@ -425,6 +425,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="O4D-Ix-kZi">
+                                <rect key="frame" x="189" y="430" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bOn-gc-B0k"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -437,13 +442,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="indicatorView" destination="O4D-Ix-kZi" id="PHQ-X3-8yA"/>
                         <outlet property="profile" destination="Shx-U1-UHA" id="xNS-qi-DWt"/>
                         <outlet property="tableView" destination="qvt-co-8d2" id="fKw-Hg-hLu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R99-kh-SJn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1601" y="187"/>
+            <point key="canvasLocation" x="1600.0000000000002" y="186.83035714285714"/>
         </scene>
     </scenes>
     <resources>
