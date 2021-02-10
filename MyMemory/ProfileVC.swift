@@ -121,22 +121,19 @@ class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         
         // 알림창 버튼 추가
         loginAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        loginAlert.addAction(UIAlertAction(title: "Login", style: .destructive, handler: { (_) in
+        loginAlert.addAction(UIAlertAction(title: "Login", style: .destructive) { (_) in
             let account = loginAlert.textFields?[0].text ?? "" // 첫 번째 필드 : 계정
             let passwd = loginAlert.textFields?[1].text ?? "" // 두 번째 필드 : 비밀번호
             
-            if self.uinfo.login(account: account, passwd: passwd) {
-                // 로그인 성공 시 처리할 내용
+            self.uinfo.login(account: account, passwd: passwd, success: {
                 self.tv.reloadData() // 테이블 뷰를 갱신
-                self.profileImage.image = self.uinfo.profile // 이미지 프로필을 갱신
-                self.drawBtn() // 로그인 상태에 따라 적절히 로그인/로그아웃 버튼을 출력
-            }  else {
-                let msg = "로그인에 실패하였습니다."
-                let alert = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                self.present(alert, animated: false, completion: nil)
-            }
-        }))
+                self.profileImage.image = self.uinfo.profile // 프로필 이미지를 갱신
+                self.drawBtn()
+            }, fail: { msg in
+                self.alert(msg)
+            })
+        })
+        
         self.present(loginAlert, animated: false, completion: nil)
     }
     
