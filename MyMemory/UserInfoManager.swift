@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 struct UserInfoKey {
     // 저장에 사용할 키
@@ -79,18 +80,9 @@ class UserInfoManager {
         }
     }
     
-    func login(account: String, passwd: String) -> Bool {
+    func login(account: String, passwd: String, success: (()->Void)? = nil, fail: (()->Void)? = nil) {
         // TOD0: 이 부분은 나중에 서버와 연동되는 코드로 대체할 예정
-        if account.isEqual("sieh96@naver.com") && passwd.isEqual("1234") {
-            let ud = UserDefaults.standard
-            ud.set(100, forKey: UserInfoKey.loginId)
-            ud.set(account, forKey: UserInfoKey.account)
-            ud.set("심찬영", forKey: UserInfoKey.name)
-            ud.synchronize()
-            return true
-        } else {
-            return false
-        }
+        
     }
     
     func logout() -> Bool {
