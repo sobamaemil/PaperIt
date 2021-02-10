@@ -277,7 +277,7 @@
                     <navigationItem key="navigationItem" id="t6W-dI-zWx">
                         <barButtonItem key="rightBarButtonItem" title="새 계정" id="5CK-Kz-7Vx">
                             <connections>
-                                <segue destination="KKK-Xg-n3a" kind="show" id="ABO-y2-k72"/>
+                                <segue destination="KKK-Xg-n3a" kind="show" id="FiX-s6-JXh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -289,7 +289,7 @@
         <!--메모 작성 Scene-->
         <scene sceneID="3Nu-kX-2fQ">
             <objects>
-                <viewController storyboardIdentifier="MemoForm" title="메모 작성 Scene" id="D1z-a3-0l9" customClass="MemoFormVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemoForm" title="메모 작성 Scene" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D1z-a3-0l9" customClass="MemoFormVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zlM-nd-3Tx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -438,7 +438,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="profile" destination="Shx-U1-UHA" id="xNS-qi-DWt"/>
-                        <outlet property="tableVIew" destination="qvt-co-8d2" id="PGk-AA-sNJ"/>
+                        <outlet property="tableView" destination="qvt-co-8d2" id="fKw-Hg-hLu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R99-kh-SJn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
