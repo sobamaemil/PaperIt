@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+
 extension UIViewController {
     var tutorialSB: UIStoryboard {
         return UIStoryboard(name: "Tutorial", bundle: Bundle.main)
