@@ -8,6 +8,9 @@
 import UIKit
 class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+
+    // API 호출 상태값을 관리할 변수
+    var isCalling = false
     
     let uinfo = UserInfoManager() // 개인 정보 관리 매니저
     
@@ -67,6 +70,8 @@ class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         self.profileImage.addGestureRecognizer(tap)
         self.profileImage.isUserInteractionEnabled = true
         
+        // 인디케이터 뷰를 화면 맨 앞으로
+        self.view.bringSubviewToFront(indicatorView)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -109,6 +114,13 @@ class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     }
     
     @objc func doLogin(_ sender: Any) {
+        if self.isCalling == true {
+            self.alert("응답을 기다리는 중입니다. \n잠시만 기다려 주세요.")
+            return
+        } else {
+            self.isCalling = true
+        }
+        
         let loginAlert = UIAlertController(title: "LOGIN", message: nil, preferredStyle: .alert)
         
         // 알림창에 들어갈 입력폼 추가
@@ -122,16 +134,30 @@ class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         })
         
         // 알림창 버튼 추가
-        loginAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        loginAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            self.isCalling = false
+        })
+        
         loginAlert.addAction(UIAlertAction(title: "Login", style: .destructive) { (_) in
+            // 인디케이터 실행
+            self.indicatorView.startAnimating()
             let account = loginAlert.textFields?[0].text ?? "" // 첫 번째 필드 : 계정
             let passwd = loginAlert.textFields?[1].text ?? "" // 두 번째 필드 : 비밀번호
             
             self.uinfo.login(account: account, passwd: passwd, success: {
+                // 인디케이터 종료
+                self.indicatorView.stopAnimating()
+                self.isCalling = false
+                
+                // UI 갱신
                 self.tv.reloadData() // 테이블 뷰를 갱신
                 self.profileImage.image = self.uinfo.profile // 프로필 이미지를 갱신
                 self.drawBtn()
             }, fail: { msg in
+                // 인디케이터 종료
+                self.indicatorView.stopAnimating()
+                self.isCalling = false
+                
                 self.alert(msg)
             })
         })
