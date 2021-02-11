@@ -7,6 +7,8 @@
 
 import UIKit
 class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    
     let uinfo = UserInfoManager() // 개인 정보 관리 매니저
     
     let profileImage = UIImageView() // 프로필 사진 이미지
