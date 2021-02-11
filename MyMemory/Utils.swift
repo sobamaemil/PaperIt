@@ -8,6 +8,10 @@
 import UIKit
 import Alamofire
 
+class TokenUtils {
+    
+}
+
 extension UIViewController {
     var tutorialSB: UIStoryboard {
         return UIStoryboard(name: "Tutorial", bundle: Bundle.main)
