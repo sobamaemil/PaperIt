@@ -6,6 +6,7 @@
 //
 // 프로필 화면 뷰 컨트롤러
 import UIKit
+import Alamofire
 import LocalAuthentication
 
 class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
