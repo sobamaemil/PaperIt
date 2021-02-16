@@ -6,6 +6,8 @@
 //
 // 프로필 화면 뷰 컨트롤러
 import UIKit
+import LocalAuthentication
+
 class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
 

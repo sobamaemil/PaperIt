@@ -184,7 +184,7 @@ class UserInfoManager {
         let param: Parameters = [ "profile_image" : profileData! ]
         
         // 이미지 전송
-        let call = AF.request(url, method: .post, encoding: JSONEncoding.default, headers: header)
+        let call = AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header)
         call.responseJSON(completionHandler: { res in
             guard let jsonObject = try! res.result.get() as? NSDictionary else {
                 fail?("올바른 응답값이 아닙니다.")
