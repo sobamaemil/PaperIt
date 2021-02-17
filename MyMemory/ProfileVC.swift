@@ -282,3 +282,17 @@ class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         // 따라서 아무 내용도 작성하지 않음
     }
 }
+
+extension ProfileVc {
+    func tokenValidate() { // 토큰 액세스 메소드
+        
+    }
+    
+    func touchID() { // 터치 아이디 인증 메소드
+        
+    }
+    
+    func refresh() { // 토큰 갱신 메소드
+        
+    }
+}
