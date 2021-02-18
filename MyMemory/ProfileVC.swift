@@ -289,6 +289,7 @@ extension ProfileVc {
         URLCache.shared.removeAllCachedResponses()
         
         // 키 체인에 액세스 토큰이 없을 결우 유효성 검증을 진행하지 않음
+        // 즉, 로그인 한 적 없거나 로그아웃 된 경우 진행하지 않음
         let tk = TokenUtils()
         guard let header = tk.getAuthorizationHeader() else {
             return
@@ -321,7 +322,27 @@ extension ProfileVc {
     } // end of func tokenValidate()
     
     func touchID() { // 터치 아이디 인증 메소드
+        // LAContext 인스턴스 생성
+        let context = LAContext()
         
+        // 로컬 인증에 사용할 변수 정의
+        var error: NSError?
+        let msg = "인증이 필요합니다."
+        let deviceAuth = LAPolicy.deviceOwnerAuthenticationWithBiometrics // 인증 정책
+        
+        // 로컬 인증이 사용 가능한지 여부 확인
+        if context.canEvaluatePolicy(deviceAuth, error: &error) {
+            // 터치 아이디 인증창 실행
+            context.evaluatePolicy(deviceAuth, localizedReason: msg, reply: { (success, e) in
+                // 토큰 갱신 로직 실행
+                self.refresh()
+            } else { // 인증 실패
+                // 인증 실채 원인에 대한 대응 로직
+                
+            })
+        } else { // 인증창이 실행되지 못한 경우
+            // 인증창 실행 불가 원인에 대한 대응 로직
+        }
     }
     
     func refresh() { // 토큰 갱신 메소드
