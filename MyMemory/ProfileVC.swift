@@ -334,11 +334,13 @@ extension ProfileVc {
         if context.canEvaluatePolicy(deviceAuth, error: &error) {
             // 터치 아이디 인증창 실행
             context.evaluatePolicy(deviceAuth, localizedReason: msg, reply: { (success, e) in
-                // 토큰 갱신 로직 실행
-                self.refresh()
-            } else { // 인증 실패
-                // 인증 실채 원인에 대한 대응 로직
-                
+                if success { // 인증 성공 : 토큰 갱신 로직
+                    // 토큰 갱신 로직 실행
+                    self.refresh()
+                } else { // 인증 실패
+                    // 인증 실채 원인에 대한 대응 로직
+                    
+                }
             })
         } else { // 인증창이 실행되지 못한 경우
             // 인증창 실행 불가 원인에 대한 대응 로직
