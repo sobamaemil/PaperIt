@@ -348,6 +348,36 @@ extension ProfileVc {
     }
     
     func refresh() { // 토큰 갱신 메소드
+        self.indicatorView.startAnimating() // 로딩 시작
         
-    }
-}
+        // 인증 헤더
+        let tk = TokenUtils()
+        let header = tk.getAuthorizationHeader()
+        
+        // 리프레시 토큰 전달 준비
+        let refreshToken = tk.load("kr.co.rubypaper.MyMemory", account: "refreshToken")
+        let param: Parameters = ["refresh_token" : refreshToken!]
+        
+        // 호출 및 응답
+        let url = "http://swiftapi.rubypaper.co.kr:2029/userAccount/refresh"
+        let refresh = AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header)
+        refresh.responseJSON() { res in
+            self.indicatorView.stopAnimating() // 로딩 중지
+            
+            guard let jsonObject = try! res.result.get() as? NSDictionary else {
+                self.alert("잘못된 응답입니다.")
+                return
+            }
+            
+            // 응답 결과 처리
+            let resultCode = jsonObject["result_code"] as! Int
+            if resultCode == 0 { // 성공 : 액세스 토큰이 갱신됨
+                // 키 체인에 저장된 액세스 토큰 교체
+                let accessToken = jsonObject["access_token"] as! String
+                tk.save("kr.co.rubypaper.MyMemory", account: "accessToken", value: accessToken)
+            } else { // 실패 : 액세스 토큰 만료
+                // 로그아웃 처리
+            }
+        }
+    } // end of responseJSON closure
+} // end of func refresh()
