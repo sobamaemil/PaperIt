@@ -285,8 +285,40 @@ class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, U
 
 extension ProfileVc {
     func tokenValidate() { // 토큰 액세스 메소드
+        // 응답 캐시를 사용하지 않도록
+        URLCache.shared.removeAllCachedResponses()
         
-    }
+        // 키 체인에 액세스 토큰이 없을 결우 유효성 검증을 진행하지 않음
+        let tk = TokenUtils()
+        guard let header = tk.getAuthorizationHeader() else {
+            return
+        }
+        
+        // 로딩 인디케이터 시작
+        self.indicatorView.startAnimating()
+        
+        // tokenValidate API를 호출함
+        let url = "http://swiftapi.rubypaper.co.kr:2029/userAccount/tokenValidate"
+        let validate = AF.request(url, method: .post, encoding: JSONEncoding.default, headers: header)
+        
+        validate.responseJSON(completionHandler: { res in
+            self.indicatorView.stopAnimating()
+            
+            let responseBody = try! res.result.get()
+            print(responseBody) // 응답 결과를 확인하기 위해 메시지 본문 전체를 출력
+            guard let jsonObject = responseBody as? NSDictionary else {
+                self.alert("잘못된 응답입니다.")
+                return
+            }
+            
+            // 응답 결과 처리
+            let resultCode = jsonObject["result_code"] as! Int
+            if resultCode != 0 { // 응답 결과가 실패일 때, 즉 토큰이 만료되었을 때
+                // 로컬 인증 실행
+                self.touchID()
+            }
+        }) // end of response closure
+    } // end of func tokenValidate()
     
     func touchID() { // 터치 아이디 인증 메소드
         
