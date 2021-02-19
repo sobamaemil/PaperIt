@@ -284,6 +284,8 @@ class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     }
 }
 
+
+// MARK: - 토큰 관련 메소드
 extension ProfileVc {
     func tokenValidate() { // 토큰 액세스 메소드
         // 응답 캐시를 사용하지 않도록
