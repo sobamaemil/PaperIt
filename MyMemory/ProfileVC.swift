@@ -364,6 +364,18 @@ extension ProfileVc {
             })
         } else { // 인증창이 실행되지 못한 경우
             // 인증창 실행 불가 원인에 대한 대응 로직
+            print(error!.localizedDescription)
+            switch (error!.code) {
+            case LAError.biometryNotEnrolled.rawValue:
+                print("터치 아이디가 등록되어 있지 않습니다")
+            case LAError.passcodeNotSet.rawValue:
+                print("패스 코드가 등록되어 있지 않습니다.")
+            default: // LAError.touchIDNotAvailable 포함
+                print("터치 아이디를 사용할 수 없습니다.")
+            }
+            OperationQueue.main.addOperation {
+                self.commonLogout(true)ç
+            }
         }
     }
     
