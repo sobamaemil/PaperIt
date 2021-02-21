@@ -374,7 +374,7 @@ extension ProfileVc {
                 print("터치 아이디를 사용할 수 없습니다.")
             }
             OperationQueue.main.addOperation {
-                self.commonLogout(true)ç
+                self.commonLogout(true)
             }
         }
     }
@@ -409,7 +409,12 @@ extension ProfileVc {
                 tk.save("kr.co.rubypaper.MyMemory", account: "accessToken", value: accessToken)
             } else { // 실패 : 액세스 토큰 만료
                 // 로그아웃 처리
-            }
+                self.alert("인증이 만료되었으므로 다시 로그인해야 합니다.") {
+                    OperationQueue.main.addOperation {
+                        self.commonLogout(true)
+                    }
+                } // end of self.alert() closure
+            } // end of if resultCode ~ else
         }
     } // end of responseJSON closure
     
