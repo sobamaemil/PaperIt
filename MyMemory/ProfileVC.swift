@@ -342,7 +342,24 @@ extension ProfileVc {
                     self.refresh()
                 } else { // 인증 실패
                     // 인증 실채 원인에 대한 대응 로직
+                    print((e?.localizedDescription)!)
                     
+                    switch (e!._code) {
+                    case LAError.systemCancel.rawValue:
+                        self.alert("시스템에 의해 인증이 취소되었습니다.")
+                    case LAError.userCancel.rawValue:
+                        self.alert("사용자에 의해 인증이 취소되었습니다.") {
+                            self.commonLogout(true)
+                        }
+                    case LAError.userFallback.rawValue:
+                        OperationQueue.main.addOperation() {
+                            self.commonLogout(true)
+                        }
+                    default:
+                        OperationQueue.main.addOperation() {
+                            self.commonLogout(true)
+                        }
+                    }
                 }
             })
         } else { // 인증창이 실행되지 못한 경우
