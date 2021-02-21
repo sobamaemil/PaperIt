@@ -383,4 +383,20 @@ extension ProfileVc {
             }
         }
     } // end of responseJSON closure
+    
+    func commonLogout(_ isLogin: Bool = false) {
+        // 저장된 기존 개인 정보 & 키 체인 데이터를 삭제하여 로그아웃 상태로 전환
+        let userInfo = UserInfoManager()
+        userInfo.deviceLogout()
+        
+        // 현재의 화면이 프로필 화면이라면 바로 UI를 갱신
+        self.tv.reloadData() // 테이블 뷰를 갱신
+        self.profileImage.image = userInfo.profile // 이미지 프로필을 갱신
+        self.drawBtn()
+        
+        // 기본 로그인 창 실행 여부
+        if isLogin {
+            self.doLogin(self)
+        }
+    }
 } // end of func refresh()
