@@ -7,7 +7,7 @@
 // 프로필 화면 뷰 컨트롤러
 
 import UIKit
-import Alamofire
+import Alamofire // DB
 import LocalAuthentication
 
 class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -282,6 +282,7 @@ class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         // 단지 프로필 화면으로 되돌아오기 위한 표식 역할
         // 따라서 아무 내용도 작성하지 않음
     }
+
 }
 
 
@@ -323,6 +324,11 @@ extension ProfileVc {
             }
         }) // end of response closure
     } // end of func tokenValidate()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // 토큰 인증 여부 체크
+        self.tokenValidate()
+    }
     
     func touchID() { // 터치 아이디 인증 메소드
         // LAContext 인스턴스 생성
