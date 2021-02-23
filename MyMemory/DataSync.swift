@@ -16,3 +16,20 @@ class DataSync {
         return appDalegate.persistentContainer.viewContext
     }()
 }
+
+// MARK: - DataSync 유틸 메소드
+extension DataSync {
+    // String - Date
+    func stringToDate(_ value: String) -> Date {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return df.date(from: value)!
+    }
+    
+    // Date - String
+    func dateToString(_ value: Date) -> String {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH-mm-ss"
+        return df.string(from: value)
+    }
+}
