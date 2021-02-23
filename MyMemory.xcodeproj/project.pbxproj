@@ -11,6 +11,7 @@
 		5717207325BEBDB80074DE72 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717207225BEBDB80074DE72 /* UserInfoManager.swift */; };
 		5725A0F625D29D8F008683A9 /* JoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725A0F525D29D8F008683A9 /* JoinVC.swift */; };
 		5733849125CD129B00F7D654 /* MemoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5733849025CD129B00F7D654 /* MemoDAO.swift */; };
+		576CBE2525E4B46A00277D26 /* DataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CBE2425E4B46A00277D26 /* DataSync.swift */; };
 		57798EC625BFFC25004B7D91 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57798EC525BFFC25004B7D91 /* Tutorial.storyboard */; };
 		57798EC925BFFF6C004B7D91 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57798EC825BFFF6C004B7D91 /* Utils.swift */; };
 		57798ECC25C00525004B7D91 /* TutorialContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57798ECB25C00525004B7D91 /* TutorialContentsVC.swift */; };
@@ -49,6 +50,7 @@
 		5717207225BEBDB80074DE72 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 		5725A0F525D29D8F008683A9 /* JoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinVC.swift; sourceTree = "<group>"; };
 		5733849025CD129B00F7D654 /* MemoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDAO.swift; sourceTree = "<group>"; };
+		576CBE2425E4B46A00277D26 /* DataSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSync.swift; sourceTree = "<group>"; };
 		57798EC525BFFC25004B7D91 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		57798EC825BFFF6C004B7D91 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		57798ECB25C00525004B7D91 /* TutorialContentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialContentsVC.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				57798ED125C00690004B7D91 /* Tutorial */,
 				57EE7FF525B541F300907A96 /* AppDelegate.swift */,
 				57EE7FF725B541F300907A96 /* SceneDelegate.swift */,
+				576CBE2425E4B46A00277D26 /* DataSync.swift */,
 				57EE7FFB25B541F300907A96 /* Main.storyboard */,
 				57CED20C25BAB60300719DAA /* SideBarVC.swift */,
 				57CED20F25BABEB900719DAA /* ProfileVC.swift */,
@@ -324,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57CED21025BABEB900719DAA /* ProfileVC.swift in Sources */,
+				576CBE2525E4B46A00277D26 /* DataSync.swift in Sources */,
 				57CED17825BA569600719DAA /* CSLogButton.swift in Sources */,
 				57CED20D25BAB60300719DAA /* SideBarVC.swift in Sources */,
 				57798EC925BFFF6C004B7D91 /* Utils.swift in Sources */,
