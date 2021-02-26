@@ -130,7 +130,29 @@ class DataSync {
         
         // 응답 및 결과 처리
         upload.responseJSON { res in
+            guard let jsonObject = try! res.result.get() as? NSDictionary else {
+                print("잘못된 응답입니다.")
+                return
+            }
             
+            let resultCode = jsonObject["result_code"] as! Int
+            if resultCode == 0 {
+                print("[\(item.title!)]이(가) 등록되었습니다.")
+                
+                // 코어 데이터에 반영
+                do {
+                    item.sync = true
+                    try self.context.save()
+                } catch let e as NSError {
+                    self.context.rollback()
+                    NSLog("An error has occured : %s", e.localizedDescription)
+                }
+            } else {
+                print(jsonObject["error_msg"] as! String)
+            }
+            
+            // 완료 처리 클로저 실행
+            complete?()
         }
     }
 }
