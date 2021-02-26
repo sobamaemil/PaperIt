@@ -88,10 +88,15 @@ class DataSync {
             
             // 읽어온 결과 집합을 순회하면서 [MemoData] 타입으로 변환
             for record in resultset {
+                indicatorView?.startAnimating() // 로딩 시작
                 print("upload data == \(record.title!)")
                 
                 // 서버에 업로드
-                self.uploadDatum(record)
+                self.uploadDatum(record) {
+                    if record === resultset.last { // 마지막 데이터가 업로드가 끝났다면 로딩 표시 해제
+                        indicatorView?.stopAnimating()
+                    }
+                }
             }
         } catch let error as NSError {
             print(error.localizedDescription)
