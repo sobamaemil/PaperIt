@@ -163,6 +163,9 @@ class ProfileVc: UIViewController, UITableViewDelegate, UITableViewDataSource, U
                 DispatchQueue.global(qos: .background).async {
                     sync.downloadBackupData() // 서버에 저장된 데이터가 있으면 내려 받음
                 }
+                DispatchQueue.global(qos: .background).async {
+                    sync.uploadData() // 서버에 저장해야 할 데이터가 있으면 업로드
+                }
             }, fail: { msg in
                 // 인디케이터 종료
                 self.indicatorView.stopAnimating()
