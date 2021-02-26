@@ -70,6 +70,16 @@ class DataSync {
             ud.setValue(true, forKey: "firstLogin")
         }
     }
+    
+    // Memo 엔터티에 저장된 모든 데이터 중에서 동기화되지 않은 것을 찾아 업로드
+    func uploadData(_ indicatorView: UIActivityIndicatorView? = nil) {
+        
+    }
+    
+    // 인자값으로 입력된 개별 MemoMO 객체를 서버에 업로드
+    func uploadDatum(_ item: MemoMO, complete: (()->Void)? = nil) {
+        
+    }
 }
 
 // MARK: - DataSync 유틸 메소드
