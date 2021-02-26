@@ -105,7 +105,33 @@ class DataSync {
     
     // 인자값으로 입력된 개별 MemoMO 객체를 서버에 업로드
     func uploadDatum(_ item: MemoMO, complete: (()->Void)? = nil) {
+        // 헤더 설정
+        let tk = TokenUtils()
+        guard let header = tk.getAuthorizationHeader() else {
+            print("로그인 상태가 아니므로 [\(item.title!)]를 업로드할 수 없습니다.")
+            return
+        }
         
+        // 전송할 값 설정
+        var param: Parameters = [
+            "title" : item.title!,
+            "contents" : item.contents!,
+            "create_date" : self.dateToString(item.regdate!)
+        ]
+        
+        // 이미지가 있을 경우 이미지도 전송할 값에 포함
+        if let imageData = item.image as Data? {
+            param["image"] = imageData.base64EncodedString()
+        }
+        
+        // 전송
+        let url = "http://swiftapi.rubypaper.co.kr:2029/memo/save"
+        let upload = AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header)
+        
+        // 응답 및 결과 처리
+        upload.responseJSON { res in
+            
+        }
     }
 }
 
